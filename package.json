@@ -9,6 +9,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "massive": "^4.6.4",
+    "path": "^0.12.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
