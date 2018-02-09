@@ -1,5 +1,20 @@
+html {
+  background: #AFD4C0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .App {
   text-align: center;
+  background: linear-gradient(to bottom, #E2F3EA, #FFFFFF);
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
 }
 
 .App-logo {
