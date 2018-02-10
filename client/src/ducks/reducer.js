@@ -1,6 +1,7 @@
 //state
 const initialState = {
   username: "",
+  userId: 0,
   password: "",
   desiredRent: "",
   filter: 0,
@@ -17,6 +18,7 @@ const initialState = {
 
 //consts
 const UPDATE_USERNAME = "UPDATE_USERNAME";
+const UPDATE_USERID = "UPDATE_USERID";
 const UPDATE_PASSWORD = "UPDATE_PASSWORD";
 const UPDATE_DESIREDRENT = "UPDATE_DESIREDRENT";
 const RESET_FILTER = "RESET_FILTER";
@@ -35,6 +37,12 @@ export function updateUsername(username) {
   return {
     type: UPDATE_USERNAME,
     payload: username
+  };
+}
+export function updateUserId(userId) {
+  return {
+    type: UPDATE_USERID,
+    payload: userId
   };
 }
 export function updatePassword(password) {
@@ -124,6 +132,8 @@ export default function reducer(state = initialState, action) {
   switch (type) {
     case UPDATE_USERNAME:
       return Object.assign({}, state, { username: payload });
+    case UPDATE_USERID:
+      return Object.assign({}, state, { userId: payload });
     case UPDATE_PASSWORD:
       return Object.assign({}, state, { password: payload });
     case UPDATE_DESIREDRENT:
