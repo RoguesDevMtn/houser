@@ -1,5 +1,5 @@
 //state
-let initialState = {
+const initialState = {
   username: "",
   password: "",
   desiredRent: "",
@@ -62,7 +62,7 @@ export function updatePropertyName(propertyName) {
   };
 }
 
-export function updatePropertyDescript(propertyDescription) {
+export function updatePropertyDescription(propertyDescription) {
   return {
     type: UPDATE_PROPERTYDESCRIPTION,
     payload: propertyDescription
@@ -119,7 +119,7 @@ export function updateMonthlyMortgage(monthlyMortgage) {
 }
 
 //reducer
-function reducer(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   var { payload, type } = action;
   switch (type) {
     case UPDATE_USERNAME:
@@ -148,5 +148,7 @@ function reducer(state = initialState, action) {
       return Object.assign({}, state, { loanAmount: payload });
     case UPDATE_MONTHLYMORTGAGE:
       return Object.assign({}, state, { monthlyMortgage: payload });
+    default:
+      return state;  
   }
 }
