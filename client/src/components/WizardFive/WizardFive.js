@@ -64,7 +64,7 @@ class WizardFive extends Component {
                     </Link>
 
                     <Link to={'/dashboard'}>
-                    <button className="completeButton" onClick={() => this.addProperty}>Complete</button>
+                    <button className="completeButton" onClick={() => this.addProperty()}>Complete</button>
                     </Link>
                 </div>
                 
