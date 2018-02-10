@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 html {
   background: #AFD4C0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -54,4 +60,92 @@ html {
 
 .navright h3{
   margin-right: 25vw;
+}
+
+.header-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: .9em;
+  display: flex;
+}
+
+.header-right {
+  margin-right: 20px;
+}
+
+.cancelButton {
+  background-color: #FEC2C2;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 7px 10px;
+}
+
+.step-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  align-items: center;
+  margin-left: 20%;
+  margin-bottom: 30px;
+}
+
+#descriptionInput {
+  height: 80px;
+}
+
+.stepButton {
+  background-color: #3B5249;
+  color: #FFFFFF;
+  padding: 5px 20px;
+  margin-top: 30px;
+}
+
+.completeButton {
+  background-color: #8AEA92;
+  padding: 5px 20px;
+  margin-top: 30px;
+}
+
+button {
+  border: none;
+  border-radius: 2px;
+}
+
+input {
+  width: 60%;
+  margin-top: 2px;
+}
+
+.parent-div h3 {
+  text-align: left;
+  margin-left: 20%;
+  margin-bottom: -1px;
+}
+
+.link-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.cityState {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20%;
+  text-align: left;
+  margin-right: 20%;
+}
+
+.cityStateZip, .zip {
+  width: 30%;
+  height: 14px;
 }

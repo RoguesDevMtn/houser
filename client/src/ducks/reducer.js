@@ -2,6 +2,7 @@
 const initialState = {
   listings:[],
   username: "",
+  userId: 0,
   password: "",
   desiredRent: "",
   filter: 0,
@@ -9,7 +10,7 @@ const initialState = {
   propertyDescription: "",
   address: "",
   city: "",
-  state: "",
+  propertyState: "",
   zip: "",
   imageUrl: "",
   loanAmount: "",
@@ -19,6 +20,7 @@ const initialState = {
 //consts
 const UPDATE_LISTINGS ="UPDATE_LISTINGS";
 const UPDATE_USERNAME = "UPDATE_USERNAME";
+const UPDATE_USERID = "UPDATE_USERID";
 const UPDATE_PASSWORD = "UPDATE_PASSWORD";
 const UPDATE_DESIREDRENT = "UPDATE_DESIREDRENT";
 const RESET_FILTER = "RESET_FILTER";
@@ -43,6 +45,12 @@ export function updateUsername(username) {
   return {
     type: UPDATE_USERNAME,
     payload: username
+  };
+}
+export function updateUserId(userId) {
+  return {
+    type: UPDATE_USERID,
+    payload: userId
   };
 }
 export function updatePassword(password) {
@@ -91,10 +99,10 @@ export function updateCity(city) {
   };
 }
 
-export function updateState(state) {
+export function updateState(propertyState) {
   return {
     type: UPDATE_STATE,
-    payload: state
+    payload: propertyState
   };
 }
 
@@ -134,6 +142,8 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, { listings: payload });
     case UPDATE_USERNAME:
       return Object.assign({}, state, { username: payload });
+    case UPDATE_USERID:
+      return Object.assign({}, state, { userId: payload });
     case UPDATE_PASSWORD:
       return Object.assign({}, state, { password: payload });
     case UPDATE_DESIREDRENT:
@@ -149,7 +159,7 @@ export default function reducer(state = initialState, action) {
     case UPDATE_CITY:
       return Object.assign({}, state, { city: payload });
     case UPDATE_STATE:
-      return Object.assign({}, state, { state: payload });
+      return Object.assign({}, state, { propertyState: payload });
     case UPDATE_ZIP:
       return Object.assign({}, state, { zip: payload });
     case UPDATE_IMAGEURL:

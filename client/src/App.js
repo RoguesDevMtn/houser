@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import router from './router'
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
@@ -12,7 +13,6 @@ class App extends Component {
         <div className="App">
         <h1>App Is Running</h1>
           {router}
-          
         </div>
       </div>
       
@@ -24,4 +24,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

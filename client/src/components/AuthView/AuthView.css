@@ -1,0 +1,40 @@
+.auth-content {
+    margin-top: 30%;
+}
+
+.auth-logo {
+    width: 100px;
+}
+
+.input-label {
+    width: 80%;
+    padding-left: 11%;
+    padding-top: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.auth-input {
+    width: 80%;
+    border: 1px solid #AFD4C0;
+}
+
+.auth-button {
+    width: 80px;
+    height: 25px;
+    border-radius: 3px;
+    margin: 16px 8px;
+    font-weight: bold;
+    font-size: 10px;
+    border: none;
+}
+
+.login {
+    background-color: #8AEA92;
+}
+
+.register {
+    background-color: #3B5249;
+    color: white;
+}

@@ -22,21 +22,21 @@ app.use( session({
   })
 );
 app.use( checkForSession );
-app.use(cors());
+
 app.use(express.static(path.resolve(__dirname, "../client", "../build")));  
 app.get("/", (req, res) => {  
  res.sendFile(path.resolve(__dirname, "../client", "../build", "index.html"));
 });
 
 massive(process.env.CONNECTION_STRING).then(dbInstance => {app.set('db', dbInstance)});
-
+app.use(cors());
 app.post(`${authBaseURL}/login`, ac.login);
 app.post(`${authBaseURL}/register`, ac.register);
 app.post(`${authBaseURL}/logout`, ac.logout);
 
-app.post(`${propsBaseURL}/properties`, pc.postProperties);
-app.get(`${propsBaseURL}/properties`, pc.getProperties);
-app.delete(`${propsBaseURL}/properties`, pc.deleteProperties);
+app.post(`${propsBaseURL}`, pc.postProperties);
+app.get(`${propsBaseURL}`, pc.getProperties);
+app.delete(`${propsBaseURL}/:id`, pc.deleteProperties);
 
 const port = 3001;
 app.listen(port, () => {console.log(`Server magic is happening on port ${port}`);});
