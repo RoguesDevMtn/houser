@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-import './Listing.css'
+import './Listing.css';
+import axios from 'axios';
 
 class Listing extends Component {
+  handleDelete(){
+    axios.delete(`api/properties?id=${this.props.propertyId}`)
+  }
   render() {
     return (
       <div className="listingContainer">
@@ -26,6 +30,7 @@ class Listing extends Component {
             <div className='detail'>{`State: ${this.props.state ? this.props.state : ""}`}</div>
             <div className='detail'>{`Zip: ${this.props.zip ? this.props.zip : ""}`}</div>
           </div>
+          <div className='deleteButton' onClick={()=>this.handleDelete()}>x</div>
       </div>
     );
   }
