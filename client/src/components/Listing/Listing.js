@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import './Listing.css'
 
 class Listing extends Component {
@@ -32,40 +31,4 @@ class Listing extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const {
-    propertyName,
-    propertyDescription,
-    loanAmount,
-    monthlyMortgage,
-    desiredRent,
-    address,
-    city,
-    state,
-    zip
-  } = state;
-  return {
-    propertyName,
-    propertyDescription,
-    loanAmount,
-    monthlyMortgage,
-    desiredRent,
-    address,
-    city,
-    state,
-    zip
-  };
-};
-
-export default connect(mapStateToProps, {
-  propertyName,
-  propertyDescription,
-  loanAmount,
-  monthlyMortgage,
-  desiredRent,
-  address,
-  city,
-  state,
-  zip
-}
-)(Listing);
+export default Listing;
