@@ -1,10 +1,11 @@
 module.exports = {
-    login: (req, res) => {
+    login: (req, res, next) => {
         const dbInstance = req.app.get('db');
         const {username} = req.body;
         const {session} = req;
         dbInstance.read_user([username])
         .then( user => {
+            console.log(user);
             session.user.username = user[0].username;
             session.user.id = user[0].user_id;
             res.status(200).send(session.user);
@@ -12,20 +13,24 @@ module.exports = {
         .catch(() => res.status(500).send());
     },
 
-    register: (req, res) => {
+    register: (req, res, next) => {
         const dbInstance = req.app.get('db');
         const {username} = req.body;
         const {session} = req;
         dbInstance.create_user([username])
-        .then( user => {
-            session.user.username = user[0].username;
-            session.user.id = user[0].user_id;
-            res.status(200).send(session.user);
+        .then(() => {
+            dbInstance.read_user([username])
+            .then(users => {
+                session.user.username = users[0].username;
+                session.user.id = users[0].user_id;
+                res.status(200).send(session.user);
+            })
+            .catch(() => res.status(500).send());            
         })
         .catch(() => res.status(500).send());
     },
 
-    logout: (req, res) => {
+    logout: (req, res, next) => {
         const {session} = req;
         session.destroy();
         res.status(200).send();

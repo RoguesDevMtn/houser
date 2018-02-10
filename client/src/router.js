@@ -12,12 +12,12 @@ import WizardFive from './components/WizardFive/WizardFive';
 export default(
     <Switch>
         <Route component={AuthView} exact path='/'/>
-        <Route component={Dashboard} path='/dashboard'/>
+        {/* <Route component={Dashboard} path='/dashboard'/> */}
         <Route component={WizardOne} path='/wizard/1'/>
-        <Route component={WizardTwo} path='/wizard/2'/>
+        {/* <Route component={WizardTwo} path='/wizard/2'/>
         <Route component={WizardThree} path='/wizard/3'/>
         <Route component={WizardFour} path='/wizard/4'/>
-        <Route component={WizardFive} path='/wizard/5'/>
+        <Route component={WizardFive} path='/wizard/5'/> */}
     </Switch>
 
 
