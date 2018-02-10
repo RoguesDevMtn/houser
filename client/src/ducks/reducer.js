@@ -9,7 +9,7 @@ const initialState = {
   propertyDescription: "",
   address: "",
   city: "",
-  state: "",
+  propertyState: "",
   zip: "",
   imageUrl: "",
   loanAmount: "",
@@ -91,10 +91,10 @@ export function updateCity(city) {
   };
 }
 
-export function updateState(state) {
+export function updateState(propertyState) {
   return {
     type: UPDATE_STATE,
-    payload: state
+    payload: propertyState
   };
 }
 
@@ -149,7 +149,7 @@ export default function reducer(state = initialState, action) {
     case UPDATE_CITY:
       return Object.assign({}, state, { city: payload });
     case UPDATE_STATE:
-      return Object.assign({}, state, { state: payload });
+      return Object.assign({}, state, { propertyState: payload });
     case UPDATE_ZIP:
       return Object.assign({}, state, { zip: payload });
     case UPDATE_IMAGEURL:
