@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   updateDesiredRent,
-  updateListings
+  updateListings,
+  resetFilter
 } from "../../ducks/reducer";
 import Listing from "../Listing/Listing";
 import "./Dashboard.css";
@@ -82,22 +83,17 @@ class Dashboard extends Component {
 
 const mapStateToProps = state => {
   const {
-    updateDesiredRent,
-    resetFilter,
     desiredRent,
-    updateListings,
     listings
   } = state;
   return {
-    updateDesiredRent,
-    resetFilter,
     desiredRent,
-    updateListings,
     listings
   };
 };
 
 export default connect(mapStateToProps, {
     updateDesiredRent,
-    updateListings
+    updateListings,
+    resetFilter
 })(Dashboard);
