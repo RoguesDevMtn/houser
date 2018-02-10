@@ -1,6 +1,6 @@
 import React,  { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateDesiredRent } from '../../ducks/reducer';
+import { updateDesiredRent, updateListings } from '../../ducks/reducer';
 import step_active from '../../step_active.png';
 import step_completed from '../../step_completed.png';
 import { Link } from 'react-router-dom';
@@ -23,6 +23,7 @@ class WizardFive extends Component {
         axios.post(`/api/properties`, body)
         .then(res => {
             console.log(res.data);
+            this.props.updateListings();
         })
         .catch(err => console.log(err));
     }
@@ -88,4 +89,4 @@ function mapStateToProps( state ){
         desiredRent
     };
 }
-export default connect(mapStateToProps, { updateDesiredRent })(WizardFive); 
+export default connect(mapStateToProps, { updateDesiredRent, updateListings })(WizardFive); 
