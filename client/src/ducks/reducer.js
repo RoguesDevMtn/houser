@@ -37,7 +37,7 @@ const UPDATE_MONTHLYMORTGAGE = "UPDATE_MONTHLYMORTGAGE";
 //action creators
 export function updateListings(listings){
   return{
-    type:UPDATE_LISTING,
+    type:UPDATE_LISTINGS,
     payload:listings
   }
 }

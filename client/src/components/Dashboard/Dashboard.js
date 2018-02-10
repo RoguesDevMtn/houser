@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   updateDesiredRent,
-  resetFilter,
-  desiredRent,
-  updateListings,
-  listings
-} from "../ducks/reducer";
+  updateListings
+} from "../../ducks/reducer";
 import Listing from "../Listing/Listing";
 import "./Dashboard.css";
 import axios from "axios";
@@ -33,7 +31,7 @@ class Dashboard extends Component {
 
   render() {
     var listingsList = this.props.listings.map((property, index) => {
-      <Listing
+      return <Listing key={index}
         propertyName={property.property_name}
         propertyDescription={property.description}
         loanAmount={property.loan_amount}
@@ -48,7 +46,7 @@ class Dashboard extends Component {
     return (
       <div className="dashContainer">
         <div className="dashHead">
-          <div className="addButton">Add new property</div>
+          <Link to="/wizard/1"><div className="addButton">Add new property</div></Link>
           <div className="desiredRentContainer">
             <div>List properties with "desired rent" greator than: $</div>
             <input
@@ -75,7 +73,7 @@ class Dashboard extends Component {
         <hr />
         <div className="homeListings">
           <h2>Home Listings</h2>
-          <listingsList />
+          {listingsList}
         </div>
       </div>
     );
@@ -101,8 +99,5 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
     updateDesiredRent,
-    resetFilter,
-    desiredRent,
-    updateListings,
-    listings
+    updateListings
 })(Dashboard);
