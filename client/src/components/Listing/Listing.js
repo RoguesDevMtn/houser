@@ -13,18 +13,18 @@ class Listing extends Component {
           <div>{`${this.props.propertyDescription}`}</div>
           </div>
           <div className="detailsContainer">
-            <div className='detail'>{`Loan: ${loanAmount ? this.props.loanAmount : "$"}`}</div>
-            <div className='detail'>{`Monthly Mortgage: ${monthlyMortgage
+            <div className='detail'>{`Loan: ${this.props.loanAmount ? this.props.loanAmount : "$"}`}</div>
+            <div className='detail'>{`Monthly Mortgage: ${this.props.monthlyMortgage
               ? this.props.monthlyMortgage
               : "$"}`}</div>
             <div className='detail'> Recommended Rent: $</div>
-            <div className='detail'>{`Desired Rent: ${desiredRent
+            <div className='detail'>{`Desired Rent: ${this.props.desiredRent
               ? this.props.desiredRent
               : "$"}`}</div>
-            <div className='detail'>{`Address: ${Address ? this.props.address : ""}`}</div>
-            <div className='detail'>{`City: ${city ? this.props.city : ""}`}</div>
-            <div className='detail'>{`State: ${state ? this.props.state : ""}`}</div>
-            <div className='detail'>{`Zip: ${zip ? this.props.zip : ""}`}</div>
+            <div className='detail'>{`Address: ${this.props.address ? this.props.address : ""}`}</div>
+            <div className='detail'>{`City: ${this.props.city ? this.props.city : ""}`}</div>
+            <div className='detail'>{`State: ${this.props.state ? this.props.state : ""}`}</div>
+            <div className='detail'>{`Zip: ${this.props.zip ? this.props.zip : ""}`}</div>
           </div>
       </div>
     );
