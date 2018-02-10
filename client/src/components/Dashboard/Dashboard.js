@@ -4,7 +4,7 @@ import{ updateDesiredRent,resetFilter } from '../ducks/reducer'
 import './Dashboard.css';
 
 class Dashboard extends Component {
-   
+    
     render() {
         //var listings = forEach property create a listing card?
         return (

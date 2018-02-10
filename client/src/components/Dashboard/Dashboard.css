@@ -2,28 +2,46 @@
     height: 900;
     width: 759;
     background-color: #E7F3EC;
+    padding: 20px;
 }
 .dashHead{
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
-align-content: center;
+align-items: center;
 justify-content: space-between;
 }
 .addButton{
     height: 47px;
-    width:199;
+    width:199px;
     background-color:#9FE79A;
+    font-weight:900;
+    font-size: 1.5em;
+    display:flex;
+    justify-content: center;
+    align-items:center;
 }
 .desiredRentContainer{
     height: 80px;
     width:719px;
-  
+    box-sizing:border-box;
+    display: flex;
+    padding:50px;
+    align-items: center;
+    justify-content:space-evenly;
+}
+h4,input{
+  font-weight:normal;
+  font-size:18px
 }
 .filterButton{
     height: 38px;
     width: 70px;
     background-color: #9FE79A;
+    font-size: 1.5em;
+    display:flex;
+    justify-content: center;
+    align-items:center;
 }
 .desiredInput{
     height: 36px;
@@ -35,7 +53,11 @@ justify-content: space-between;
     height: 38px;
     width: 70px;
     background-color:#3F5149;
+    font-size: 1.5em;
     color: white;
+    display:flex;
+    justify-content: center;
+    align-items:center;
 }
 .homeListings{
 
