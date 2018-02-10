@@ -4,8 +4,29 @@ import { updateDesiredRent } from '../../ducks/reducer';
 import step_active from '../../step_active.png';
 import step_completed from '../../step_completed.png';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class WizardFive extends Component {
+    addProperty() {
+        const body = {
+            property_name: this.props.propertyName, 
+            description: this.props.propertyDescription, 
+            address: this.props.address, 
+            city: this.props.city, 
+            state: this.props.propertyState, 
+            zip: this.props.zip, 
+            image_URL: this.props.imageUrl, 
+            loan_amount: this.props.loanAmount, 
+            mortgage_amount: this.props.monthlyMortgage, 
+            desired_rent: this.props.desiredRent
+        }
+        axios.post(`/api/properties`, body)
+        .then(res => {
+            console.log(res.data);
+        })
+        .catch(err => console.log(err));
+    }
+
     render(){
         const { updateDesiredRent } = this.props;
         return(
@@ -43,7 +64,7 @@ class WizardFive extends Component {
                     </Link>
 
                     <Link to={'/dashboard'}>
-                    <button className="completeButton">Complete</button>
+                    <button className="completeButton" onClick={() => this.addProperty()}>Complete</button>
                     </Link>
                 </div>
                 
@@ -53,9 +74,17 @@ class WizardFive extends Component {
     }
 }
 function mapStateToProps( state ){
-    const { monthlyMortgage, desiredRent } = state;
+    const { propertyName, propertyDescription, address, city, propertyState, zip, imageUrl, loanAmount, monthlyMortgage, desiredRent } = state;
     return {
-        monthlyMortgage,
+        propertyName, 
+        propertyDescription, 
+        address, 
+        city, 
+        propertyState, 
+        zip, 
+        imageUrl, 
+        loanAmount, 
+        monthlyMortgage, 
         desiredRent
     };
 }
