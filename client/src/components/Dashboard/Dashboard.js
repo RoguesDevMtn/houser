@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import{ updateDesiredRent,resetFilter } from '../ducks/reducer'
+import './Dashboard.css';
 
 class Dashboard extends Component {
    
@@ -12,7 +13,7 @@ class Dashboard extends Component {
                     <div className="addButton">Add new property</div>
                     <div className='desiredRentContainer'>
                         <div>List properties with "desired rent" greator than: $</div>
-                        <input onChange={e=>updateDesiredRent(e.target.value)} type="number" name="desired rent" id=""/>
+                        <input onChange={e=>updateDesiredRent(e.target.value)} className="desiredInput"type="number" name="desired rent" id=""/>
                         <div onClick={}className='filterButton'>Filter</div>
                         <div onClick={resetFilter()} className='resetButton'>Reset</div>
                     </div>

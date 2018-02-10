@@ -1,0 +1,42 @@
+.dashContainer{
+    height: 900;
+    width: 759;
+    background-color: #E7F3EC;
+}
+.dashHead{
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: space-between;
+}
+.addButton{
+    height: 47px;
+    width:199;
+    background-color:#9FE79A;
+}
+.desiredRentContainer{
+    height: 80px;
+    width:719px;
+  
+}
+.filterButton{
+    height: 38px;
+    width: 70px;
+    background-color: #9FE79A;
+}
+.desiredInput{
+    height: 36px;
+    width: 85px;
+    border:solid 1px #619674 ;
+    border-radius: 2px;
+}
+.resetButton{
+    height: 38px;
+    width: 70px;
+    background-color:#3F5149;
+    color: white;
+}
+.homeListings{
+
+}
