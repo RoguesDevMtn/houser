@@ -5,7 +5,6 @@ module.exports = {
         const {session} = req;
         dbInstance.read_user([username])
         .then( user => {
-            console.log(user);
             session.user.username = user[0].username;
             session.user.id = user[0].user_id;
             res.status(200).send(session.user);
