@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import './Listing.css';
 import axios from 'axios';
+import {updateListings} from "../../ducks/reducer";
 
 class Listing extends Component {
   handleDelete(){
-    axios.delete(`api/properties?id=${this.props.propertyId}`)
+    axios.delete(`api/properties?id=${this.props.propertyId}`).then(response=>{ 
+	  this.props.updateListings(response.data)
+    });
   }
+  
   render() {
     return (
       <div className="listingContainer">
@@ -36,4 +40,13 @@ class Listing extends Component {
   }
 }
 
-export default Listing;
+const mapStateToProps = state => {
+  return {
+   
+  };
+};
+
+export default connect(mapStateToProps, { 
+    updateListings,
+})(Listing);
+
