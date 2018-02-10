@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateUsername, updateUserId, updatePassword } from '../../ducks/reducer';
 import auth_logo from '../../auth_logo.png';
 import axios from 'axios';
+import './AuthView.css'
 
 class AuthView extends Component {
     login() {
@@ -30,17 +31,17 @@ class AuthView extends Component {
     render(){
         const {updateUsername, updatePassword} = this.props;
         return(
-            <div>
+            <div className="auth-content">
                 <div>
-                    <img src={auth_logo} alt="home logo"/>
-                    <p>Username</p>
-                    <input type="text" onChange={(event) => updateUsername(event.target.value)}/>
-                    <p>Password</p>
-                    <input type="password" onChange={(event) => updatePassword(event.target.value)}/>
+                    <img className="auth-logo" src={auth_logo} alt="home logo"/>
+                    <div className="input-label">Username</div>
+                    <input className="auth-input" type="text" onChange={(event) => updateUsername(event.target.value)}/>
+                    <div className="input-label">Password</div>
+                    <input className="auth-input" type="password" onChange={(event) => updatePassword(event.target.value)}/>
                 </div>
                 <div>
-                    <button onClick={() => this.login()}>Login</button>
-                    <button onClick={() => this.register()}>Register</button>
+                    <button className="auth-button login" onClick={() => this.login()}>Login</button>
+                    <button className="auth-button register" onClick={() => this.register()}>Register</button>
                 </div>
             </div>
         )
