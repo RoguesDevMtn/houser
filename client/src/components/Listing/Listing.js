@@ -12,6 +12,7 @@ class Listing extends Component {
         <div className="nameDescriptionContainer">
           <div>{`${this.props.propertyName}`}</div>
           <div>{`${this.props.propertyDescription}`}</div>
+          </div>
           <div className="detailsContainer">
             <div className='detail'>{`Loan: ${loanAmount ? this.props.loanAmount : "$"}`}</div>
             <div className='detail'>{`Monthly Mortgage: ${monthlyMortgage
@@ -26,7 +27,6 @@ class Listing extends Component {
             <div className='detail'>{`State: ${state ? this.props.state : ""}`}</div>
             <div className='detail'>{`Zip: ${zip ? this.props.zip : ""}`}</div>
           </div>
-        </div>
       </div>
     );
   }
