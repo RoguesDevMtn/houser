@@ -3,13 +3,11 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   updateDesiredRent,
-  updateListings,
-  resetFilter
+  updateListings
 } from "../../ducks/reducer";
 import Listing from "../Listing/Listing";
 import "./Dashboard.css";
 import axios from "axios";
-
 class Dashboard extends Component {
   componentDidMount() {
     axios.get(`/api/properties`).then(response => {
@@ -29,10 +27,11 @@ class Dashboard extends Component {
       this.props.resetFilter();
     });
   }
-
   render() {
     var listingsList = this.props.listings.map((property, index) => {
       return <Listing key={index}
+      // *********** added this to dashboard.js
+        propertyId={property.property_id}
         propertyName={property.property_name}
         propertyDescription={property.description}
         loanAmount={property.loan_amount}
@@ -80,20 +79,23 @@ class Dashboard extends Component {
     );
   }
 }
-
 const mapStateToProps = state => {
   const {
+    updateDesiredRent,
+    resetFilter,
     desiredRent,
+    updateListings,
     listings
   } = state;
   return {
+    updateDesiredRent,
+    resetFilter,
     desiredRent,
+    updateListings,
     listings
   };
 };
-
 export default connect(mapStateToProps, {
     updateDesiredRent,
-    updateListings,
-    resetFilter
+    updateListings
 })(Dashboard);
