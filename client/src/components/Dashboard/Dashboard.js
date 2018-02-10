@@ -24,11 +24,11 @@ class Dashboard extends Component {
         this.props.updateListings(response.data);
       });
   }
-  handleResetClick(){
+  handleResetClick() {
     axios.get(`/api/properties`).then(response => {
-        this.props.updateListings(response.data);
-        this.props.resetFilter();
-      });
+      this.props.updateListings(response.data);
+      this.props.resetFilter();
+    });
   }
 
   render() {
@@ -83,14 +83,26 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
-  const {} = state;
+  const {
+    updateDesiredRent,
+    resetFilter,
+    desiredRent,
+    updateListings,
+    listings
+  } = state;
   return {
     updateDesiredRent,
-    resetFilter
+    resetFilter,
+    desiredRent,
+    updateListings,
+    listings
   };
 };
 
 export default connect(mapStateToProps, {
-  updateDesiredRent,
-  resetFilter
+    updateDesiredRent,
+    resetFilter,
+    desiredRent,
+    updateListings,
+    listings
 })(Dashboard);
