@@ -17,27 +17,41 @@ html {
   height: 100vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.nav {
+  height: 75px;
+  width: 100vw;
+  background: #519872;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.nav {
+  color: #FFFFFF;
+  display: flex;
 }
 
-.App-title {
-  font-size: 1.5em;
+.navleft {
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+}
+.navleft img, span {
+  padding: 0 5px;
 }
 
-.App-intro {
-  font-size: large;
+.navleft img {
+  margin-left: 25vw;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.navright {
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+}
+
+.navright h3{
+  margin-right: 25vw;
 }
