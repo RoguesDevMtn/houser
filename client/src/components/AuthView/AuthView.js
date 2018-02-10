@@ -13,7 +13,7 @@ class AuthView extends Component {
         }
         axios.post(`/api/auth/login`, bodyData)
         .then(res => {
-            updateUserId(res.data.user_id)
+            this.props.updateUserId(res.data.id)
             this.props.history.push('/dashboard')
         });
     }
@@ -24,7 +24,7 @@ class AuthView extends Component {
         }
         axios.post(`/api/auth/register`, bodyData)
         .then(res => {
-            updateUserId(res.data.user_id)
+            this.props.updateUserId(res.data.id)
             this.props.history.push('/dashboard')
         });
     }
