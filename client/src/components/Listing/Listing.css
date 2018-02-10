@@ -2,16 +2,21 @@
     height: 150px;
     width: 700px;
     box-sizing: border-box;
-    background-color: #DEDEDE
+    background-color: #DEDEDE;
+    display:flex;
+    flex-direction:row;
+    
 }
 .imgContainer{
     height: 150px;
     width: 150px;
+    background-color:#F7F7F7
     
 }
 .nameDescriptionContainer{
     height: 130px;
     width: 257px;
+  
 }
 .detailsContainer{
     height: 130px;
