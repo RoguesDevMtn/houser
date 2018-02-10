@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../../App.css';
 import header_logo from '../../header_logo.png';
 
 export default class Navbar extends Component {
+  handleLogout() {
+    axios.post(`/api/auth/logout`)
+  }
+
   render() {
     return (
       <div className="nav">
         <div className="navleft">
             
                 <img src={header_logo} alt="Logo"/>
-                <span>Houser </span>
+                <span><strong>Houser</strong></span>
                 <span>Dashboard</span>
             
         </div>
         <div className="navright">
-            <h3>Logout</h3> 
+            <Link to="/" className="logout-button" onClick={() => this.handleLogout()}>Logout</Link> 
         </div>        
       </div>
       
