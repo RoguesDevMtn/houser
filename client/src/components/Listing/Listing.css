@@ -1,0 +1,29 @@
+.listingContainer {
+    height: 150px;
+    width: 700px;
+    box-sizing: border-box;
+    background-color: #DEDEDE
+}
+.imgContainer{
+    height: 150px;
+    width: 150px;
+    
+}
+.nameDescriptionContainer{
+    height: 130px;
+    width: 257px;
+}
+.detailsContainer{
+    height: 130px;
+    width: 257px;
+    border-left: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+.detail{
+    height: 22px;
+    width: auto;
+
+}

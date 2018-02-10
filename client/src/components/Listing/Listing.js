@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import './Listing.css'
 
 class Listing extends Component {
   render() {
@@ -12,18 +13,18 @@ class Listing extends Component {
           <div>{`${this.props.propertyName}`}</div>
           <div>{`${this.props.propertyDescription}`}</div>
           <div className="detailsContainer">
-            <div>{`Loan: ${loanAmount ? this.props.loanAmount : "$"}`}</div>
-            <div>{`Monthly Mortgage: ${monthlyMortgage
+            <div className='detail'>{`Loan: ${loanAmount ? this.props.loanAmount : "$"}`}</div>
+            <div className='detail'>{`Monthly Mortgage: ${monthlyMortgage
               ? this.props.monthlyMortgage
               : "$"}`}</div>
-            <div> Recommended Rent: $</div>
-            <div>{`Desired Rent: ${desiredRent
+            <div className='detail'> Recommended Rent: $</div>
+            <div className='detail'>{`Desired Rent: ${desiredRent
               ? this.props.desiredRent
               : "$"}`}</div>
-            <div>{`Address: ${Address ? this.props.address : ""}`}</div>
-            <div>{`City: ${city ? this.props.city : ""}`}</div>
-            <div>{`State: ${state ? this.props.state : ""}`}</div>
-            <div>{`Zip: ${zip ? this.props.zip : ""}`}</div>
+            <div className='detail'>{`Address: ${Address ? this.props.address : ""}`}</div>
+            <div className='detail'>{`City: ${city ? this.props.city : ""}`}</div>
+            <div className='detail'>{`State: ${state ? this.props.state : ""}`}</div>
+            <div className='detail'>{`Zip: ${zip ? this.props.zip : ""}`}</div>
           </div>
         </div>
       </div>
