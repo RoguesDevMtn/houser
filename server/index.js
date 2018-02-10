@@ -34,9 +34,9 @@ app.post(`${authBaseURL}/login`, ac.login);
 app.post(`${authBaseURL}/register`, ac.register);
 app.post(`${authBaseURL}/logout`, ac.logout);
 
-app.post(`${propsBaseURL}/properties`, pc.postProperties);
-app.get(`${propsBaseURL}/properties`, pc.getProperties);
-app.delete(`${propsBaseURL}/properties`, pc.deleteProperties);
+app.post(`${propsBaseURL}`, pc.postProperties);
+app.get(`${propsBaseURL}`, pc.getProperties);
+app.delete(`${propsBaseURL}/:id`, pc.deleteProperties);
 
 const port = 3001;
 app.listen(port, () => {console.log(`Server magic is happening on port ${port}`);});
