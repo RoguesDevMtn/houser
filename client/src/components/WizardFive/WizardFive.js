@@ -23,7 +23,7 @@ class WizardFive extends Component {
         axios.post(`/api/properties`, body)
         .then(res => {
             console.log(res.data);
-            this.props.updateListings();
+            this.props.updateListings(res.data);
         })
         .catch(err => console.log(err));
     }
