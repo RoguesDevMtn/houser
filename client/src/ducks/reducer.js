@@ -1,5 +1,6 @@
 //state
 const initialState = {
+  listings:[],
   username: "",
   userId: 0,
   password: "",
@@ -17,6 +18,7 @@ const initialState = {
 };
 
 //consts
+const UPDATE_LISTINGS ="UPDATE_LISTINGS";
 const UPDATE_USERNAME = "UPDATE_USERNAME";
 const UPDATE_USERID = "UPDATE_USERID";
 const UPDATE_PASSWORD = "UPDATE_PASSWORD";
@@ -33,6 +35,12 @@ const UPDATE_LOANAMOUNT = "UPDATE_LOANAMOUNT";
 const UPDATE_MONTHLYMORTGAGE = "UPDATE_MONTHLYMORTGAGE";
 
 //action creators
+export function updateListings(listings){
+  return{
+    type:UPDATE_LISTING,
+    payload:listings
+  }
+}
 export function updateUsername(username) {
   return {
     type: UPDATE_USERNAME,
@@ -130,6 +138,8 @@ export function updateMonthlyMortgage(monthlyMortgage) {
 export default function reducer(state = initialState, action) {
   var { payload, type } = action;
   switch (type) {
+    case UPDATE_LISTINGS:
+      return Object.assign({}, state, { listings: payload });
     case UPDATE_USERNAME:
       return Object.assign({}, state, { username: payload });
     case UPDATE_USERID:
