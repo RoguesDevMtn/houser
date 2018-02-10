@@ -1,7 +1,15 @@
 import React, { Component } from "react";
-import './Listing.css'
+import './Listing.css';
+import axios from 'axios';
+import {updateListings} from "../../ducks/reducer";
 
 class Listing extends Component {
+  handleDelete(){
+    axios.delete(`api/properties?id=${this.props.propertyId}`).then(response=>{ 
+	  this.props.updateListings(response.data)
+    });
+  }
+  
   render() {
     return (
       <div className="listingContainer">
@@ -26,9 +34,19 @@ class Listing extends Component {
             <div className='detail'>{`State: ${this.props.state ? this.props.state : ""}`}</div>
             <div className='detail'>{`Zip: ${this.props.zip ? this.props.zip : ""}`}</div>
           </div>
+          <div className='deleteButton' onClick={()=>this.handleDelete()}>x</div>
       </div>
     );
   }
 }
 
-export default Listing;
+const mapStateToProps = state => {
+  return {
+   
+  };
+};
+
+export default connect(mapStateToProps, { 
+    updateListings,
+})(Listing);
+

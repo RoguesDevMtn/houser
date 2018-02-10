@@ -33,6 +33,7 @@ class Dashboard extends Component {
   render() {
     var listingsList = this.props.listings.map((property, index) => {
       return <Listing key={index}
+        propertyId={property.property_id}
         propertyName={property.property_name}
         propertyDescription={property.description}
         loanAmount={property.loan_amount}
